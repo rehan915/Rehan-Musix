@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="ur" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rehan Music — All Musics Available</title>
+
+  <!-- Tailwind Play CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Remix Icon -->
+  <link href="https://cdn.remixicon.com/releases/v2.5.0/remixicon.css" rel="stylesheet">
+
+  <style>
+    /* small custom animations and RTL-friendly tweaks */
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(12px);} to {opacity:1; transform: translateY(0);} }
+    .fade-up { animation: fadeUp 600ms ease forwards; }
+
+    /* music card hover */
+    .music-card{ transition: transform .25s ease, box-shadow .25s ease; }
+    .music-card:hover{ transform: translateY(-6px) scale(1.01); box-shadow: 0 12px 30px rgba(0,0,0,0.12); }
+
+    /* subtle pulse for play button */
+    @keyframes pulse-slow { 0% { transform: scale(1);} 50% { transform: scale(1.02);} 100% { transform: scale(1);} }
+
+    /* ensure audio controls are full width on mobile */
+    audio{ width: 100%; }
+
+    /* RTL spacing for nav icons */
+    .nav-icons > a { margin-left: .5rem; }
+
+    /* handle very small screens */
+    @media (max-width: 420px){
+      .hero-title{ font-size: 1.6rem; }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+
+  <!-- NAVBAR -->
+  <header class="sticky top-0 z-30 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <!-- site name with remix icon -->
+        <i class="ri-music-2-fill text-2xl text-indigo-600"></i>
+        <span class="font-semibold text-lg">Rehan <span class="text-indigo-600">Music</span></span>
+      </div>
+
+      <nav class="nav-icons flex items-center">
+        <a href="#" aria-label="YouTube" class="inline-flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-100 transition">
+          <i class="ri-youtube-line text-xl text-red-600"></i>
+          <span class="hidden sm:inline">YouTube</span>
+        </a>
+        <a href="#" aria-label="TikTok" class="inline-flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-100 transition">
+          <i class="ri-tiktok-line text-xl"></i>
+          <span class="hidden sm:inline">TikTok</span>
+        </a>
+        <a href="#" aria-label="Instagram" class="inline-flex items-center gap-2 px-2 py-1 rounded-md hover:bg-gray-100 transition">
+          <i class="ri-instagram-line text-xl text-pink-500"></i>
+          <span class="hidden sm:inline">Instagram</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO / MAIN -->
+  <main class="max-w-4xl mx-auto px-4 py-8">
+    <section class="grid grid-cols-1 sm:grid-cols-3 gap-6 items-center mb-8">
+      <!-- photo -->
+      <div class="sm:col-span-1 flex justify-center">
+        <div class="w-44 h-44 rounded-2xl overflow-hidden shadow-lg fade-up" style="animation-delay:120ms">
+          <img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=800&auto=format&fit=crop" alt="artist" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- title + description -->
+      <div class="sm:col-span-2">
+        <h1 class="hero-title text-3xl sm:text-4xl font-extrabold leading-tight fade-up" style="animation-delay:200ms">Rehan Collection — Har Dil ke Liye</h1>
+        <p class="mt-2 text-gray-600 fade-up" style="animation-delay:260ms">Latest remixes, high quality audio, aur beautiful mobile experience. Neeche apne favourite gaane play karein — 2 column layout desktop pe aur single column mobile pe.</p>
+
+        <div class="mt-4 flex gap-3">
+          <a href="#music" class="inline-flex items-center gap-2 bg-indigo-600 text-white px-4 py-2 rounded-full shadow hover:shadow-lg transition transform hover:-translate-y-0.5">
+            <i class="ri-play-fill"></i>
+            Play Music
+          </a>
+          <a href="#footer" class="inline-flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-full hover:bg-gray-100 transition">
+            About
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MUSIC SECTION -->
+    <section id="music" class="mb-12">
+      <h2 class="text-2xl font-bold mb-4">Music</h2>
+
+      <!-- responsive grid: 2 columns on sm and up -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+
+        <!-- Music card repeated: replace src & img as needed -->
+        <!-- Card 1 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1507878866276-a947ef722fee?q=80&w=600&auto=format&fit=crop" alt="track 1" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Anty Bande</h3>
+              <p class="text-sm text-gray-500">Remix by Rehan Gujjar </p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="amty bande.mp4" type="audio/mpeg">
+                  Your browser does not support the audio element.
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1485579149621-3123dd979885?q=80&w=600&auto=format&fit=crop" alt="track 2" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Stubborn Song</h3>
+              <p class="text-sm text-gray-500">Remix by Rehan Gujjar </p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="vade vade wali.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=600&auto=format&fit=crop" alt="track 3" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Collabose Song</h3>
+              <p class="text-sm text-gray-500">Remix by Rehan Gujjar </p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="collabose.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1522120692869-1b6f1d2da7d3?q=80&w=600&auto=format&fit=crop" alt="track 4" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Fan Song</h3>
+              <p class="text-sm text-gray-500">Remix by Rehan Gujjar </p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="fan.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1506152983158-7f7a2f0d0fdb?q=80&w=600&auto=format&fit=crop" alt="track 5" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Sawad Song</h3>
+              <p class="text-sm text-gray-500">Remix by Sunset • 3:50</p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="sawad.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1514512364185-2c6c2a7b5c2c?q=80&w=600&auto=format&fit=crop" alt="track 6" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">B-Town Song</h3>
+              <p class="text-sm text-gray-500">Remix by Moonlight • 4:12</p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="b-town.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+         <article class="music-card bg-white p-4 rounded-2xl shadow-sm border border-gray-50">
+          <div class="flex items-start gap-4">
+            <img src="https://images.unsplash.com/photo-1514512364185-2c6c2a7b5c2c?q=80&w=600&auto=format&fit=crop" alt="track 6" class="w-24 h-24 rounded-lg object-cover flex-shrink-0">
+            <div class="flex-1">
+              <h3 class="font-semibold">Self Made - Song</h3>
+              <p class="text-sm text-gray-500">Remix by Rehan Gujjar</p>
+              <div class="mt-3">
+                <audio controls preload="none">
+                  <source src="self-made.mp4" type="audio/mpeg">
+                </audio>
+              </div>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="footer" class="bg-white border-t mt-6">
+    <div class="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
+      <p class="mb-2">© 2025 Gujjar Music — Sab rights reserved.</p>
+      <p>Built with ❤️ Rehan Gujjar</p>
+    </div>
+  </footer>
+
+  <!-- small script to ensure only one audio plays at a time on the page -->
+  <script>
+    document.addEventListener('play', function(e){
+      const audios = document.querySelectorAll('audio');
+      for (const a of audios){
+        if (a !== e.target){ a.pause(); }
+      }
+    }, true);
+  </script>
+
+</body>
+</html>
